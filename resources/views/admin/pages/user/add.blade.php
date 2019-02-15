@@ -4,6 +4,15 @@
 <h1>User <small class="text-muted">Tambah</small></h1>
 <hr>
 
+@if(session('result') == 'fail')
+<div class="alert alert-danger alert-dismissible fade show">
+	<strong>Failed!</strong> Gagal disimpan.
+	<button type="button" class="close" data-dismiss="alert">
+		&times;
+	</button>
+</div>
+@endif
+
 <div class="row">
 	<div class="col-md-6">
 		<form method="POST" action="{{ route('admin.user.add') }}">
@@ -19,8 +28,8 @@
 						<input type="text" name="name"
 						class="form-control {{ $errors->has('name')?'is-invalid':'' }}"
 						value="{{ old('name') }}"
-						id="iName" placeholder="Name" required>
-						<label for="iName">Name</label>	
+						id="iName" placeholder="name" required>
+						<label for="iName">name</label>	
 						@if($errors->has('name'))
 						<div class="invalid-feedback">{{ $errors->first('name') }}</div>
 						@endif
