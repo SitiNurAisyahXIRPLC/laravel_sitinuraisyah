@@ -29,7 +29,7 @@
 						class="form-control {{ $errors->has('name')?'is-invalid':'' }}"
 						value="{{ old('name') }}"
 						id="iName" placeholder="name" required>
-						<label for="iName">name</label>	
+						<label for="iName">Name</label>	
 						@if($errors->has('name'))
 						<div class="invalid-feedback">{{ $errors->first('name') }}</div>
 						@endif
